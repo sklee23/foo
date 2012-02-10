@@ -6,7 +6,8 @@ static char *progname;			// Holds program name.
 
 static char *file_name;
 static int dry_run;
-static int file_size = 1024 * 1024;	// Default size 1MB
+static int unit_size = 4096;		// Default 4K
+static int file_size = 1024 * 1024;	// Default 1M
 
 static void print_usage(void)
 {
@@ -20,7 +21,7 @@ int main(int argc, char **argv)
 
 	progname = argv[0];
 
-	while ((c = getopt(argc, argv, "fxs:h")) != -1) {
+	while ((c = getopt(argc, argv, "fxs:r:h")) != -1) {
 		switch (c) {
 		case 'f':
 			file_name = optarg;
@@ -30,6 +31,9 @@ int main(int argc, char **argv)
 			break;
 		case 's':
 			file_size = atoi(optarg);
+			break;
+		case 'r':
+			unit_size = atoi(optarg);
 			break;
 		case 'h':
 			// Fall through.
@@ -41,6 +45,7 @@ int main(int argc, char **argv)
 
 	printf("dry_run: %d\n", dry_run);
 	printf("file_size: %d\n", file_size);
+	printf("unit_size: %d\n", unit_size);
 
 	exit(0);
 }
