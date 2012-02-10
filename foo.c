@@ -1,14 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <getopt.h>
 
 static char *progname;			// Holds program name.
+
+static char *file_name;
+static int dry_run;
+static int file_size = 1024 * 1024;	// Default size 1MB
+
+static void print_usage(void)
+{
+	printf("Usage: %s [options]\n", progname);
+}
 
 // This is main routine.
 int main(int argc, char **argv)
 {
+	char c;
+
 	progname = argv[0];
 
-	printf("Program name: %s\n", progname);
+	while ((c = getopt(argc, argv, "fxs:h")) != -1) {
+		switch (c) {
+		case 'f':
+			file_name = optarg;
+			break;
+		case 'x':
+			dry_run = 1;
+			break;
+		case 's':
+			file_size = atoi(optarg);
+			break;
+		case 'h':
+			// Fall through.
+		default:
+			print_usage();
+			exit(0);
+		}
+	}
+
+	printf("dry_run: %d\n", dry_run);
+	printf("file_size: %d\n", file_size);
 
 	exit(0);
 }
