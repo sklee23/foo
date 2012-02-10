@@ -14,6 +14,11 @@ static void print_usage(void)
 	printf("Usage: %s [options]\n", progname);
 }
 
+static void do_test_case(void)
+{
+	printf("Start test...\n");
+}
+
 // This is main routine.
 int main(int argc, char **argv)
 {
@@ -42,10 +47,13 @@ int main(int argc, char **argv)
 			exit(0);
 		}
 	}
-
+#if 0
 	printf("dry_run: %d\n", dry_run);
 	printf("file_size: %d\n", file_size);
 	printf("unit_size: %d\n", unit_size);
+#endif
+
+	do_test_case();
 
 	exit(0);
 }
