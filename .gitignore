@@ -1,0 +1,6 @@
+/foo
+*.o
+tags
+TAGS
+/cscope.*
+*.tar.gz
