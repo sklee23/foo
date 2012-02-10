@@ -43,6 +43,8 @@ int main(int argc, char **argv)
 		}
 	}
 
+	printf("optarg: %d\n", optarg);		// debug.
+
 	printf("dry_run: %d\n", dry_run);
 	printf("file_size: %d\n", file_size);
 	printf("unit_size: %d\n", unit_size);
