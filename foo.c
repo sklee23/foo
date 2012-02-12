@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <getopt.h>
 
+// Git id: $Id$
+
 static char *progname;			// Holds program name.
 
 static char *file_name;
