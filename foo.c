@@ -8,6 +8,7 @@ static char *file_name;
 static int dry_run;
 static int unit_size = 4096;		// Default 4K
 static int file_size = 1024 * 1024;	// Default 1M
+static int fsync_ratio;
 
 static void print_usage(void)
 {
@@ -26,8 +27,11 @@ int main(int argc, char **argv)
 
 	progname = argv[0];
 
-	while ((c = getopt(argc, argv, "fxs:r:h")) != -1) {
+	while ((c = getopt(argc, argv, "F:fxs:r:h")) != -1) {
 		switch (c) {
+		case 'F':
+			fsync_ratio = atoi(optarg);
+			break;
 		case 'f':
 			file_name = optarg;
 			break;
