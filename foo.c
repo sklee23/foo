@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include <getopt.h>
 
+//
+// Blah blah blah...
+//
+
 static char *progname;			// Holds program name.
 
 static char *file_name;
