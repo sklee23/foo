@@ -17,9 +17,10 @@ static int file_size = 1024 * 1024;	// Default 1M
 static int fsync_ratio;
 static int random_op_ratio;
 
-static void print_usage(void)
+static void print_usage_and_quit(void)
 {
 	printf("Usage: %s [options]\n", progname);
+	exit(0);
 }
 
 static void do_test_case(void)
@@ -60,8 +61,7 @@ int main(int argc, char **argv)
 		case 'h':
 			// Fall through.
 		default:
-			print_usage();
-			exit(0);
+			print_usage_and_quit();
 		}
 	}
 
