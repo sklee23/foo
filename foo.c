@@ -35,6 +35,8 @@ int main(int argc, char **argv)
 	progname = argv[0];
 	printf ("program name: %s\n", progname);
 
+	printf("Issue added\n");
+
 	while ((c = getopt(argc, argv, "F:R:fxs:r:h")) != -1) {
 		switch (c) {
 		case 'F':
