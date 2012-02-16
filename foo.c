@@ -65,13 +65,6 @@ int main(int argc, char **argv)
 		}
 	}
 
-#if 0
-	printf("optarg: %d\n", optarg);		// debug.
-	printf("dry_run: %d\n", dry_run);
-	printf("file_size: %d\n", file_size);
-	printf("unit_size: %d\n", unit_size);
-#endif
-
 	do_test_case();
 
 	exit(0);
