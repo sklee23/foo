@@ -3,7 +3,10 @@
 #include <stdlib.h>
 #include <getopt.h>
 
+//
 // This comment is written in getopt branch...
+// Blah blah blah...
+// (Comments merged)
 
 static char *progname;			// Holds program name.
 
